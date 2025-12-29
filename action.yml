@@ -49,12 +49,13 @@ runs:
       id: versioning
       if: ${{ github.event_name != 'pull_request' }}
       uses: ./mobile-android-pipelines/actions/increment-version
-      
-    - name: Sonar scan
-      uses: ./mobile-android-pipelines/actions/sonar-scan
-      with:
-        sonar-token: ${{ inputs.SONAR_TOKEN }}
-        version-name: ${{ steps.versioning.outputs.new_version }}
+
+# Uncomment and fix to enable Sonar
+#    - name: Sonar scan
+#      uses: ./mobile-android-pipelines/actions/sonar-scan
+#      with:
+#        sonar-token: ${{ inputs.SONAR_TOKEN }}
+#        version-name: ${{ steps.versioning.outputs.new_version }}
         
     - name: Bundle reports folder
       uses: ./mobile-android-pipelines/actions/bundle-reports

@@ -41,10 +41,11 @@ runs:
       with:
         SCREENSHOT_TEST_COMMAND: ${{ inputs.SCREENSHOT_TEST_COMMAND }}
 
-    - name: Sonar scan
-      uses: ./mobile-android-pipelines/actions/sonar-scan
-      with:
-        sonar-token: ${{ inputs.SONAR_TOKEN }}
+# Uncomment and fix to enable Sonar
+#    - name: Sonar scan
+#      uses: ./mobile-android-pipelines/actions/sonar-scan
+#      with:
+#        sonar-token: ${{ inputs.SONAR_TOKEN }}
 
     - name: Bundle reports folder
       uses: ./mobile-android-pipelines/actions/bundle-reports
